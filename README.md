@@ -14,6 +14,9 @@ Read [our Medium post](https://medium.com/@schikulski/completing-a-typeface-that
 
 If you have any suggestions, feature requests or you want to help expanding the typeface, we'd love to hear from you in the issue section or contact [Simen](https://github.com/schikulski) or [Fábio](https://github.com/scannerlicker).
 
+## Future Updates
+There are no future updates planned, at the moment.
+
 ## Licensing
 This Font Software is licensed under the SIL Open Font License, Version 1.1. [More details in the license file](LICENSE.md).
 
