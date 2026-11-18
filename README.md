@@ -10,6 +10,30 @@ Optician Sans is a fully functional typeface based on the historical optotype le
 
 Read [our Medium post](https://medium.com/@schikulski/completing-a-typeface-that-was-started-decades-ago-a9c977c9cf08) for more background information about the project. Or check out [the website optician-sans.com](https://optician-sans.com/?utm_source=github&utm_medium=optician-sans).
 
+## Changes in this fork (v1.003)
+
+This is a fork of [anewtypeofinterference/Optician-Sans](https://github.com/anewtypeofinterference/Optician-Sans). It adds the characters the original lacks for technical headlines, so text like `$PATH`, `<script>` or `~/.ssh` no longer falls back to another font mid-word.
+
+| Character | Glyph | Notes |
+|---|---|---|
+| `$` | `dollar` | A slightly shortened S with stem stubs that reach just past the baseline and cap height |
+| `<` `>` | `less`, `greater` | A V turned on its side, sized to match `+` and `=` |
+| `~` | `asciitilde` | A single wave at the hyphen's weight, on the same centre line |
+| `…` | `ellipsis` | Three periods at the period's own spacing |
+| `` ` `` | `grave.quote` | A backtick at quote height. The original accent-height `grave` is kept for the accented letters, but U+0060 now points at this glyph |
+
+The new glyphs are drawn by [`scripts/add_glyphs.py`](scripts/add_glyphs.py), which patches the compiled fonts in `OpenType-PS/` and `OpenType-TT/` and regenerates the web fonts in `Web-PS/` and `Web-TT/`. To rebuild:
+
+```
+pip install fonttools brotli skia-pathops
+python scripts/add_glyphs.py
+```
+
+Two things to know:
+
+- The FontLab source in `VFC/` does not contain these glyphs. They exist only in the compiled fonts.
+- The new glyphs are unhinted, and the original digital signature has been removed because it cannot survive a modification.
+
 ## Contributing
 
 If you have any suggestions, feature requests or you want to help expanding the typeface, we'd love to hear from you in the issue section or contact [Simen](https://github.com/schikulski) or [Fábio](https://github.com/scannerlicker).
